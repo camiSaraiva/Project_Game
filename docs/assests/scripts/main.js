@@ -4,7 +4,7 @@ const ctx = canvas.getContext('2d');
 let player 
 window.onload = () => {
     document.getElementById('start-button').onclick = () => {
-        player = new Player (50, 50, 100, 175, 'red', ctx);
+        player = new Player (50, 50, 100, 175, ctx);
         let game = new Game(ctx, 1200, 580, player);
         game.start()
     };

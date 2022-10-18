@@ -30,31 +30,23 @@ class Game {
         this.player.draw();
         this.updateObstacles();
         this.checkGameOver();
-        /* this.stop(); */
     }
-
-    /* score() {
-      const score = Math.floor(this.frames / 5);
-      this.ctx.font = '22px monospace';
-      this.ctx.fillStyle = "black";
-      this.ctx.fillStyle = (`Score: ${score}`, 200, 50);
-    } */
     
     checkGameOver() {
         const crashed = this.obstacles.some((obstacle) => {
           return this.player.crashWith(obstacle);
         });
-    
         if (crashed) {
-          this.score -= 5;
+          this.stop();
+          /* this.score -= 5; */
         }
     }
 
     stop() {
-      if(this.score <= 0){
-        clearInterval(this.intervalId);
+      clearInterval(this.intervalId);
+      /* if(this.score <= 0){
         return 'Sashay Away!'
-      }
+      } */
       
     }
 

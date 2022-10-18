@@ -5,8 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Game</title>
+    <link rel="stylesheet" href="docs/assests/styles/styles.css" />
 </head>
 <body>
-    <h1> Hi there!</h1>
+    <div class = "firstScr">
+        <div class="game-intro">
+            <img src="/docs/assests/images/RuPaul-logo.png" alt="Rupaul's logo" class="logo-img" />
+            <br />
+            <div class="control_container">
+                <div class="instructions">
+                    <div class="wasd-inst">
+                        <h1 class="wasd-text">Player 1</h1>
+                        <h2 class="description-p1">Use the keys below to control your player.</h2>
+                        <img src="/docs/assests/images/wasd-clean.png" alt="wasd keys" class="wasd-img"/>
+                    </div>
+                    <div class="arrows-inst">
+                        <h1 class="arrows-text">Player 2</h1>
+                        <h2 class="description-p2">Use the keys below to control your player.</h2>
+                        <img src="/docs/assests/images/arrows-clean.png" alt="arrow keys" class="arrows-img" />
+                    </div>
+                </div>
+                <button id="start-button">Start Game</button>
+            </div>
+        </div>
+        <div class="game-board">
+            <canvas id="canvas" width="1200px" height="560px"></canvas>
+        </div>
+    </div>
+<script type="text/javascript" src="/docs/assests/scripts/component.js"></script>
+<script type="text/javascript" src="/docs/assests/scripts/obstacles.js"></script>
+<script type="text/javascript" src="/docs/assests/scripts/game.js"></script>
+<script type="text/javascript" src="/docs/assests/scripts/main.js"></script>
 </body>
 </html>

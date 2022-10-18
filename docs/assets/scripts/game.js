@@ -13,7 +13,7 @@ class Game {
     }
 
     drawBackground() {
-        this.backgroundImage.src = "/docs/assets/images/background_img-2.jpg";
+        this.backgroundImage.src = "docs/assets/images/background_img-2.jpg";
         ctx.drawImage(this.backgroundImage, 0, 0, 1200, 580);
     }
 

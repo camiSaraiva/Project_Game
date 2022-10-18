@@ -7,7 +7,7 @@ class Obstacles {
         this.img = new Image;
         this.ctx = ctx;
         this.obstacles = [];
-        this.img.src = "/docs/assests/images/obstacles.png"
+        this.img.src = "/docs/assets/images/obstacles.png"
     }
    draw(){
     ctx.drawImage(this.img, this.x, this.y, 100, 60)

@@ -20,7 +20,7 @@ window.addEventListener('keydown', (e) => {
         player.x -= 10;
         break;
         case 'ArrowUp':
-        player.img.src = "/docs/assests/images/Rupaul_lying.png"
+        player.img.src = "/docs/assets/images/Rupaul_lying.png"
         if (player.speedY < -5){
             player.speedY = player.speedY
         } else {
@@ -33,6 +33,6 @@ window.addEventListener('keydown', (e) => {
 
   window.addEventListener('keyup', (e) => {
     //player.gravity = 2;
-    player.img.src = "/docs/assests/images/Rupaul_standing.png"
+    player.img.src = "/docs/assets/images/Rupaul_standing.png"
     player.speedY = 0;
   });

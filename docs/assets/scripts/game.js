@@ -13,7 +13,7 @@ class Game {
     }
 
     drawBackground() {
-        this.backgroundImage.src = "/docs/assests/images/background_img-2.jpg";
+        this.backgroundImage.src = "/docs/assets/images/background_img-2.jpg";
         ctx.drawImage(this.backgroundImage, 0, 0, 1200, 580);
     }
 
@@ -29,17 +29,20 @@ class Game {
         this.player.newPos();
         this.player.draw();
         this.updateObstacles();
+        this.healthBar();
         this.checkGameOver();
+        
     }
     
     checkGameOver() {
-        const crashed = this.obstacles.some((obstacle) => {
-          return this.player.crashWith(obstacle);
-        });
-        if (crashed) {
+      for(let i = 0; i< this.obstacles.length; i++){
+        if(this.player.crashWith(this.obstacles[i])){
+          this.obstacles.splice(i,1)
+          this.player.score -= 10;
+        } else if(this.player.score <= 0){
           this.stop();
-          /* this.score -= 5; */
         }
+      }
     }
 
     stop() {
@@ -67,5 +70,10 @@ class Game {
             this.obstacles.push(new Obstacles(1200, height, 50, 50, 'yellow', this.ctx));
          }
         };
+
+      healthBar(){
+        this.ctx.fillStyle = "red";
+        this.ctx.fillRect(20,20,this.player.score,20)
+      }
 }
   

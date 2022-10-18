@@ -8,8 +8,8 @@ class Player {
       this.ctx = ctx;
       this.gravity = 0.09;
       this.speedY = 0;
-      this.score = 50;
-      this.img.src = "/docs/assests/images/Rupaul_standing.png"
+      this.score = 100;
+      this.img.src = "/docs/assets/images/Rupaul_standing.png"
     }
     draw() {
       ctx.drawImage(this.img, this.x, this.y, 100, 200)

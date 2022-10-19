@@ -13,15 +13,13 @@ class Game {
     }
 
     drawBackground() {
-        this.backgroundImage.src = "docs/assets/images/background_img-2.jpg";
-        ctx.drawImage(this.backgroundImage, 0, 0, 1200, 580);
+        this.backgroundImage.src = "docs/assets/images/werk_room_clean.png";
+        ctx.drawImage(this.backgroundImage, 0, 0, 1400, 860);
     }
 
     start() {
         this.intervalId = setInterval(this.update, 1000 / 60)
     }
-
-    
 
     update = () => {
         this.frames++
@@ -48,7 +46,7 @@ class Game {
     stop() {
       clearInterval(this.intervalId);
       /* if(this.score <= 0){
-        return 'Sashay Away!'
+        
       } */
       
     }
@@ -62,12 +60,12 @@ class Game {
         
         if(this.frames % 60 === 0){
             let minHeight = 50;
-            let maxHeight = 500;
+            let maxHeight = 750;
     
             let height = Math.floor(Math.random() * (maxHeight - minHeight + 1) + minHeight);
     
         
-            this.obstacles.push(new Obstacles(1200, height, 50, 50, 'yellow', this.ctx));
+            this.obstacles.push(new Obstacles(1400, height, 80, 80, this.ctx));
          }
         };
 

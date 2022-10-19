@@ -12,13 +12,13 @@ class Player {
       this.img.src = "docs/assets/images/Rupaul_standing.png"
     }
     draw() {
-      ctx.drawImage(this.img, this.x, this.y, 100, 200)
+      ctx.drawImage(this.img, this.x, this.y, 100, 240)
       }
     newPos(){
        this.speedY += this.gravity 
        this.y += this.speedY  
-        if(this.y > 365){
-            this.y = 365
+        if(this.y > 550){
+            this.y = 550
         }else if(this.y < 0){
             this.y = 0
         }

@@ -4,8 +4,8 @@ const ctx = canvas.getContext('2d');
 let player 
 window.onload = () => {
     document.getElementById('start-button').onclick = () => {
-        player = new Player (50, 50, 100, 175, ctx);
-        let game = new Game(ctx, 1200, 580, player);
+        player = new Player (50, 300, 100, 190, ctx);
+        let game = new Game(ctx, 1400, 860, player);
         game.start()
     };
    
@@ -32,7 +32,6 @@ window.addEventListener('keydown', (e) => {
   });
 
   window.addEventListener('keyup', (e) => {
-    //player.gravity = 2;
     player.img.src = "docs/assets/images/Rupaul_standing.png"
     player.speedY = 0;
   });

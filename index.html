@@ -8,21 +8,28 @@
     <link rel="stylesheet" href="docs/assets/styles/styles.css" />
 </head>
 <body>
+    <div class="gameOverContainer">
+        <img id="gameover1" src="docs/assets/images/Player1_shantay.png" alt="gameover"/>
+        <img id="gameover2" src="docs/assets/images/Player2_shantay.png" alt="gameover"/>
+    </div>
     <div class = "firstScr">
         <div class="game-intro">
             <img src="docs/assets/images/RuPaul-logo.png" alt="Rupaul's logo" class="logo-img" />
             <br />
             <div class="control_container">
                 <div class="instructions">
+                    <h1>Instructions</h1>
+                    <p><b>Not today, Satan!</b> Escape Michelle Visage to crown the next Drag Queen SuperStar! </p>
+                    <h2>Use the keys below to control your player.</h2>
+                </div>
+                <div class="controls">
                     <div class="wasd-inst">
-                        <h1 class="wasd-text">Player 1</h1>
-                        <h2 class="description-p1">Use the keys below to control your player.</h2>
-                        <img src="docs/assets/images/arrows-clean.png" alt="wasd keys" class="wasd-img"/>
+                        <h1>Player 1</h1>
+                        <img src="/docs/assets/images/arrows-clean.png" alt="arrow keys" class="arrows-img"/>
                     </div>
                     <div class="arrows-inst">
-                        <h1 class="arrows-text">Player 2</h1>
-                        <h2 class="description-p2">Use the keys below to control your player.</h2>
-                        <img src="docs/assets/images/wasd-clean.png" alt="arrow keys" class="arrows-img" />
+                        <h1>Player 2</h1>
+                        <img src="/docs/assets/images/wasd-clean.png" alt="wasd keys" class="wasd-img" />
                     </div>
                 </div>
                 <button id="start-button">Start Game</button>
@@ -32,9 +39,10 @@
             <canvas id="canvas" width="1400px" height="860px"></canvas>
         </div>
     </div>
-<script type="text/javascript" src="docs/assets/scripts/component.js"></script>
-<script type="text/javascript" src="docs/assets/scripts/obstacles.js"></script>
-<script type="text/javascript" src="docs/assets/scripts/game.js"></script>
-<script type="text/javascript" src="docs/assets/scripts/main.js"></script>
+    <button id="restart">Play Again!</button>
+    <script type="text/javascript" src="docs/assets/scripts/component.js"></script>
+    <script type="text/javascript" src="docs/assets/scripts/obstacles.js"></script>
+    <script type="text/javascript" src="docs/assets/scripts/game.js"></script>
+    <script type="text/javascript" src="docs/assets/scripts/main.js"></script>
 </body>
 </html>

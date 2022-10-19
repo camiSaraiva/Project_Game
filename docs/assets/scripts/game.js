@@ -1,3 +1,6 @@
+const gameover1 = document.getElementById('gameover1');
+const gameover2 = document.getElementById('gameover2');
+const restartBtn = document.getElementById('restart');
 
 class Game {
     constructor(ctx, width, height, player, player2) {
@@ -38,7 +41,7 @@ class Game {
         this.healthBar();
         this.healthBar2();
         this.checkGameOver();
-        
+    
     }
     
     checkGameOver() {
@@ -47,23 +50,26 @@ class Game {
           this.obstacles.splice(i,1)
           this.player.score -= 10;
         } else if(this.player.score <= 0){
-          this.ctx.drawImage(this.imgGameover, 0, 0,this.width,this.height);
+          
           this.stop()
+          gameover1.classList.remove('hidden');
+          restartBtn.classList.remove('hidden');
+          startBtn.classList.add('hidden')
         } else if (this.player2.crashWith(this.obstacles[i])){
           this.obstacles.splice(i,1)
           this.player2.score -= 10;
         } else if (this.player2.score <= 0) {
-          this.ctx.drawImage(this.imgGameover2, 0, 0,this.width,this.height);
+          
           this.stop()
+          gameover2.classList.remove('hidden');
+          restartBtn.classList.remove('hidden');
+          startBtn.classList.add('hidden')
         }
       }
     }
 
     stop() {
       clearInterval(this.intervalId);
-      /* if(this.score <= 0){
-        
-      } */
       
     }
 
@@ -93,16 +99,21 @@ class Game {
        } 
       
       };
-        
 
       healthBar(){
-        this.ctx.fillStyle = "red";
-        this.ctx.fillRect(20,20,this.player.score,20)
+        const imgscr1 = new Image ();
+        imgscr1.src = "/docs/assets/images/PLAYER 1_score.png";
+        ctx.drawImage(imgscr1, 40, 15, 200, 120);
+        this.ctx.fillStyle = "#88ff55";
+        this.ctx.fillRect(80,75,this.player.score,20)
       }
 
       healthBar2(){
-        this.ctx.fillStyle = "red";
-        this.ctx.fillRect(20,60,this.player2.score,20)
+        const imgscr2 = new Image ();
+        imgscr2.src = "/docs/assets/images/PLAYER 2_score.png";
+        ctx.drawImage(imgscr2, 1200, 15, 200, 120);
+        this.ctx.fillStyle = "#88ff55";
+        this.ctx.fillRect(1245,75,this.player2.score,20)
       }
 }
   

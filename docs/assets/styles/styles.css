@@ -20,7 +20,7 @@ body {
 .logo-img{
     width: 748.8px;
     height: 456.3px;
-    padding-top: 20px;
+    margin-top: -10px;
 }
 
 .game-board{
@@ -32,15 +32,6 @@ body {
     align-content: center;
     margin-bottom: 20px;
     padding-left: 20px;
-}
-.instructions{
-    display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: space-evenly;
-	align-items: center;
-	align-content: center;
-    padding-bottom: 50px;
 }
 .arrows-inst{
     display: flex;
@@ -139,4 +130,61 @@ body {
 .game-board{
     padding-left: 20px;
     
+}
+
+.instructions{
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+    margin-top: -20px;
+
+}
+.controls{
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+.control_container{
+    margin: -50px;
+}
+.instructions p{
+    font-size: 25px;
+    width: 600px;
+    text-align: center;
+}
+
+.instructions h1{
+    font-size: 30px;
+}
+
+#restart{
+    width: 400px;
+    height: 150px;
+    background-color: #FB2576;
+    color: #ffffff;
+    font-size: 50px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 40px;
+}
+
+
+.hidden {
+    display: none;
+}
+
+.gameOverContainer{
+    display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+    background-color: #0000005f;
 }

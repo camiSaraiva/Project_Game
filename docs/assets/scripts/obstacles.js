@@ -10,7 +10,7 @@ class Obstacles {
         this.img.src = "docs/assets/images/obstacles.png"
     }
    draw(){
-    ctx.drawImage(this.img, this.x, this.y, 100, 60)
+    ctx.drawImage(this.img, this.x, this.y, 60, 60)
    }
    top() {
     return this.y;

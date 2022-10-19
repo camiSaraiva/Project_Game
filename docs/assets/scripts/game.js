@@ -1,14 +1,20 @@
 
 class Game {
-    constructor(ctx, width, height, player) {
+    constructor(ctx, width, height, player, player2) {
       this.ctx = ctx;
       this.width = width;
       this.height = height;
       this.player = player;
+      this.player2 = player2;
       this.intervalId = null;
       this.frames = 0;
       this.backgroundImage = new Image();
       this.obstacles = [];
+      this.imgGameover = new Image();
+      this.imgGameover.src = "/docs/assets/images/Player2_shantay.png";
+      this.imgGameover2 = new Image();
+      this.imgGameover2.src = "/docs/assets/images/Player1_shantay.png";
+
 
     }
 
@@ -26,8 +32,11 @@ class Game {
         this.drawBackground();
         this.player.newPos();
         this.player.draw();
+        this.player2.newPos();
+        this.player2.draw();
         this.updateObstacles();
         this.healthBar();
+        this.healthBar2();
         this.checkGameOver();
         
     }
@@ -38,7 +47,14 @@ class Game {
           this.obstacles.splice(i,1)
           this.player.score -= 10;
         } else if(this.player.score <= 0){
-          this.stop();
+          this.ctx.drawImage(this.imgGameover, 0, 0,this.width,this.height);
+          this.stop()
+        } else if (this.player2.crashWith(this.obstacles[i])){
+          this.obstacles.splice(i,1)
+          this.player2.score -= 10;
+        } else if (this.player2.score <= 0) {
+          this.ctx.drawImage(this.imgGameover2, 0, 0,this.width,this.height);
+          this.stop()
         }
       }
     }
@@ -58,7 +74,7 @@ class Game {
         }
         
         
-        if(this.frames % 60 === 0){
+        if(this.frames % 60 === 0 && this.frames < 1000){
             let minHeight = 50;
             let maxHeight = 750;
     
@@ -66,12 +82,27 @@ class Game {
     
         
             this.obstacles.push(new Obstacles(1400, height, 80, 80, this.ctx));
-         }
-        };
+         } else if(this.frames % 40 === 0 && this.frames > 1000){
+          let minHeight = 50;
+          let maxHeight = 750;
+  
+          let height = Math.floor(Math.random() * (maxHeight - minHeight + 1) + minHeight);
+  
+      
+          this.obstacles.push(new Obstacles(1400, height, 80, 80, this.ctx));
+       } 
+      
+      };
+        
 
       healthBar(){
         this.ctx.fillStyle = "red";
         this.ctx.fillRect(20,20,this.player.score,20)
+      }
+
+      healthBar2(){
+        this.ctx.fillStyle = "red";
+        this.ctx.fillRect(20,60,this.player2.score,20)
       }
 }
   

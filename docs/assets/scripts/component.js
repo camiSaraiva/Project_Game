@@ -1,15 +1,16 @@
 class Player {
-    constructor(x, y, w, h, ctx) {
+    constructor(x, y, w, h, ctx, image) {
       this.x = x;
       this.y = y;
       this.w = w;
       this.h = h;
-      this.img = new Image;
+      this.img = new Image();
+      this.img.src = image;
       this.ctx = ctx;
       this.gravity = 0.09;
       this.speedY = 0;
       this.score = 100;
-      this.img.src = "docs/assets/images/Rupaul_standing.png"
+
     }
     draw() {
       ctx.drawImage(this.img, this.x, this.y, 100, 240)

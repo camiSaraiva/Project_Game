@@ -14,9 +14,9 @@ class Game {
       this.backgroundImage = new Image();
       this.obstacles = [];
       this.imgGameover = new Image();
-      this.imgGameover.src = "/docs/assets/images/Player2_shantay.png";
+      this.imgGameover.src = "docs/assets/images/Player2_shantay.png";
       this.imgGameover2 = new Image();
-      this.imgGameover2.src = "/docs/assets/images/Player1_shantay.png";
+      this.imgGameover2.src = "docs/assets/images/Player1_shantay.png";
 
 
     }
@@ -102,7 +102,7 @@ class Game {
 
       healthBar(){
         const imgscr1 = new Image ();
-        imgscr1.src = "/docs/assets/images/PLAYER 1_score.png";
+        imgscr1.src = "docs/assets/images/PLAYER 1_score.png";
         ctx.drawImage(imgscr1, 40, 15, 200, 120);
         this.ctx.fillStyle = "#88ff55";
         this.ctx.fillRect(80,75,this.player.score,20)
@@ -110,7 +110,7 @@ class Game {
 
       healthBar2(){
         const imgscr2 = new Image ();
-        imgscr2.src = "/docs/assets/images/PLAYER 2_score.png";
+        imgscr2.src = "docs/assets/images/PLAYER 2_score.png";
         ctx.drawImage(imgscr2, 1200, 15, 200, 120);
         this.ctx.fillStyle = "#88ff55";
         this.ctx.fillRect(1245,75,this.player2.score,20)

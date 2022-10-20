@@ -14,9 +14,9 @@ class Game {
       this.backgroundImage = new Image();
       this.obstacles = [];
       this.imgGameover = new Image();
-      this.imgGameover.src = "docs/assets/images/Player2_shantay.png";
+      this.imgGameover.src = "docs/assets/images/Player1_shantay.png";
       this.imgGameover2 = new Image();
-      this.imgGameover2.src = "docs/assets/images/Player1_shantay.png";
+      this.imgGameover2.src = "docs/assets/images/Player2_shantay.png";
 
 
     }

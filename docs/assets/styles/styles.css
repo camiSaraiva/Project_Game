@@ -1,10 +1,16 @@
+
+
 body {
     margin: 0;
     padding: 0;
     background: linear-gradient(0deg, rgba(141,174,201,1) 0%, rgba(230,155,166,1) 50%, rgba(237,214,140,1) 100%);
     font-family:  Helvetica, sans-serif; 
-    height: 100vh; 
-    width:  100vw; 
+    /*height: 100vh; 
+    width:  100vw; */
+    width: 200%;
+    height: 100vh;
+    transform-origin: top left;
+    transform: scale(50%);
 }
 
 .game-intro{

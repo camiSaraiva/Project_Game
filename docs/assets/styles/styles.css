@@ -191,7 +191,7 @@ body {
 
 #gameOverContainer{
     width: 100%;
-    height: 182vh;
+    height: 183vh;
     z-index: 1;
 	flex-direction: column;
     background-color: #0000005f;

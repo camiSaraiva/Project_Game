@@ -1,6 +1,7 @@
 const gameover1 = document.getElementById('gameover1');
 const gameover2 = document.getElementById('gameover2');
 const restartBtn = document.getElementById('restart');
+let outAudio = new Audio('docs/assets/audios/obstacle_audio.mp3');
 
 class Game {
     constructor(ctx, width, height, player, player2) {
@@ -17,8 +18,6 @@ class Game {
       this.imgGameover.src = "docs/assets/images/Player1_shantay.png";
       this.imgGameover2 = new Image();
       this.imgGameover2.src = "docs/assets/images/Player2_shantay.png";
-
-
     }
 
     drawBackground() {
@@ -41,7 +40,6 @@ class Game {
         this.healthBar();
         this.healthBar2();
         this.checkGameOver();
-    
     }
     
     checkGameOver() {
@@ -49,22 +47,22 @@ class Game {
         if(this.player.crashWith(this.obstacles[i])){
           this.obstacles.splice(i,1)
           this.player.score -= 10;
+          outAudio.play();
         } else if(this.player.score <= 0){
           this.stop();
           gameover1.classList.remove('hidden');
           restartBtn.classList.remove('hidden');
-          //startBtn.classList.add('hidden');
           document.getElementById("gameOverContainer").style.display = "flex";
           
         } else if (this.player2.crashWith(this.obstacles[i])){
           this.obstacles.splice(i,1)
           this.player2.score -= 10;
+          outAudio.play();
         } else if (this.player2.score <= 0) {
           
           this.stop();
           gameover2.classList.remove('hidden');
           restartBtn.classList.remove('hidden');
-          //startBtn.classList.add('hidden');
           document.getElementById("gameOverContainer").style.display = "flex";
           
         }
@@ -81,23 +79,15 @@ class Game {
             this.obstacles[i].x -= 5;
             this.obstacles[i].draw();
         }
-        
-        
         if(this.frames % 60 === 0 && this.frames < 1000){
             let minHeight = 50;
             let maxHeight = 750;
-    
             let height = Math.floor(Math.random() * (maxHeight - minHeight + 1) + minHeight);
-    
-        
             this.obstacles.push(new Obstacles(1400, height, 80, 80, this.ctx));
          } else if(this.frames % 40 === 0 && this.frames > 1000){
           let minHeight = 50;
           let maxHeight = 750;
-  
           let height = Math.floor(Math.random() * (maxHeight - minHeight + 1) + minHeight);
-  
-      
           this.obstacles.push(new Obstacles(1400, height, 80, 80, this.ctx));
        } 
       

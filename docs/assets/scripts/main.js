@@ -27,7 +27,6 @@ window.onload = () => {
         player2 = new Player (50, 300, 100, 190, ctx, "docs/assets/images/Rupaul_standing_plr2.png");
         let game = new Game(ctx, 1400, 860, player, player2);
         document.getElementById("gameOverContainer").style.display = "none";
-       
         helloAudio.play();
         game.start()
    }
@@ -76,8 +75,6 @@ window.addEventListener('keydown', (e) => {
         break;
     }
   });
-
-
   window.addEventListener('keyup', (e) => {
     player2.img.src = "docs/assets/images/Rupaul_standing_plr2.png"
     player2.speedY = 0;

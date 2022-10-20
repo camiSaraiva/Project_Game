@@ -50,20 +50,23 @@ class Game {
           this.obstacles.splice(i,1)
           this.player.score -= 10;
         } else if(this.player.score <= 0){
-          
-          this.stop()
+          this.stop();
           gameover1.classList.remove('hidden');
           restartBtn.classList.remove('hidden');
-          startBtn.classList.add('hidden')
+          //startBtn.classList.add('hidden');
+          document.getElementById("gameOverContainer").style.display = "flex";
+          
         } else if (this.player2.crashWith(this.obstacles[i])){
           this.obstacles.splice(i,1)
           this.player2.score -= 10;
         } else if (this.player2.score <= 0) {
           
-          this.stop()
+          this.stop();
           gameover2.classList.remove('hidden');
           restartBtn.classList.remove('hidden');
-          startBtn.classList.add('hidden')
+          //startBtn.classList.add('hidden');
+          document.getElementById("gameOverContainer").style.display = "flex";
+          
         }
       }
     }

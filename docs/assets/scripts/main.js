@@ -4,28 +4,31 @@ const ctx = canvas.getContext('2d');
 let player 
 let player2
 
+let fupAudio = new Audio('docs/assets/audios/fUp.mp3');
+let helloAudio  = new Audio('docs/assets/audios/hellox3.mp3');
+
 
 window.onload = () => {
     restartBtn.classList.add('hidden');
     gameover1.classList.add('hidden');
     gameover2.classList.add('hidden');
-    let audio = new Audio('docs/assets/audios/hellox3.mp3');
-    audio.play();
     document.getElementById('start-button').onclick = () => {
         player = new Player (200, 300, 100, 200, ctx, "docs/assets/images/Rupaul_standing_plr1.png");
         player2 = new Player (50, 300, 100, 200, ctx, "docs/assets/images/Rupaul_standing_plr2.png");
         let game = new Game(ctx, 1400, 860, player, player2);
         game.start()
-        let audio = new Audio('docs/assets/audios/fUp.mp3');
-        audio.play();
+        fupAudio.play();
     };
-   restartBtn.onclick = () => {
+    restartBtn.onclick = () => {
         gameover1.classList.add('hidden');
-        gameover1.classList.add('hidden');
+       // gameover1.classList.add('hidden');
         restartBtn.classList.add('hidden');
         player = new Player (200, 300, 100, 190, ctx, "docs/assets/images/Rupaul_standing_plr1.png");
         player2 = new Player (50, 300, 100, 190, ctx, "docs/assets/images/Rupaul_standing_plr2.png");
         let game = new Game(ctx, 1400, 860, player, player2);
+        document.getElementById("gameOverContainer").style.display = "none";
+       
+        helloAudio.play();
         game.start()
    }
 };

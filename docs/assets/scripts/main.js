@@ -39,7 +39,7 @@ window.addEventListener('keydown', (e) => {
         player.x -= 10;
         break;
         case 'ArrowUp':
-        player.img.src = "docs/assets/images/Rupaul_lying_plr1.png"
+        player.img.src = "docs/assets/images/player1_up.png"
         
         if (player.speedY < -5){
             player.speedY = player.speedY
@@ -64,7 +64,7 @@ window.addEventListener('keydown', (e) => {
         player2.x -= 10;
         break;
         case 'KeyW':
-        player2.img.src = "docs/assets/images/Rupaul_lying_plr2.png"
+        player2.img.src = "docs/assets/images/player2_up.png"
         if (player2.speedY < -5){
             player2.speedY = player2.speedY
         } else {
